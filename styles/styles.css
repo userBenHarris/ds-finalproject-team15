@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'BentonSansRegular';
+    src: url('BentonSans-Regular_T.ttf');
+}
+
+body {
+    font-family: BentonSansRegular,Helvetica,Arial,sans-serif;
+}
+
+.navbar, footer {
+    background-color: #990000 !important;
+    color: white !important;
+}
+
+h1, .display-2 {
+    display: table;
+    color: white;
+    font-size: 3vw;
+    background-color: rgba(0,0,0,0.3);
+    padding: .6vw;
+    border-radius: 15px;
+}
+
+h4, .display-4 {
+    display: table;
+    color: white;
+    font-size: 2vw;
+    font-style: italic;
+    background-color: rgba(0,0,0,0.3);
+    padding: .6vw;
+    border-radius: 15px;
+}
+
+.card-img-overlay br {
+    font-size: .5vw;
+}
