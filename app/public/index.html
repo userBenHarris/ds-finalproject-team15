@@ -14,7 +14,7 @@
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <link rel="stylesheet" href="../styles/styles.css" >
+    <link rel="stylesheet" href="css/styles.css" >
 
     <title>Oconee County Fire Rescue</title>
 
@@ -31,7 +31,7 @@
 
 
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="home.html">Oconee County Fire Rescue</a>
+    <a class="navbar-brand" href="index.html">Oconee County Fire Rescue</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,50 +40,20 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown 1
+                    Certifications
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">option1</a>
-                    <a class="dropdown-item" href="">option2</a>
-                    <a class="dropdown-item" href="">option3</a>
-                    <a class="dropdown-item" href="">option4</a>
-                    <a class="dropdown-item" href="">option5</a>
+                    <a class="dropdown-item" href="add_cert.html">Add Certifications</a>
+                    <a class="dropdown-item" href="view_cert.html">View certifications</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown 2
+                    Members
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">option1</a>
-                    <a class="dropdown-item" href="">option2</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown 3
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">option1</a>
-                    <a class="dropdown-item" href="">option2</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown 4
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">option1</a>
-                    <a class="dropdown-item" href="">option2</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown 5
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">option1</a>
-                    <a class="dropdown-item" href="">option2</a>
+                    <a class="dropdown-item" href="add_member.html">Add Members</a>
+                    <a class="dropdown-item" href="view_member.html">View Members</a>
                 </div>
             </li>
 
@@ -97,7 +67,7 @@
 
 <div class="card" style="border: none">
 	<div data-aos="fade-zoom-in" data-aos-duration="3000">
-    	<img src="../images/firetruck.jpg" class="img-fluid">
+    	<img src="images/firetruck.jpg" class="img-fluid">
     </div>
     <div class="card-img-overlay">
     	<div class="row">
@@ -113,9 +83,45 @@
 <!-- BEGIN: INSERT CODE HERE -->
 
 
-<br>
-<p>**Content goes here</p>
-<br>
+
+<div class="container-fluid">
+
+	<div class="row justify-content-center mt-4">
+	    <div class="col-sm-6 col-md-4 d-flex align-items-stretch">
+	        <div class="card mx-auto mb-4" style="width: 80%">
+	            <h5 class="card-header">Firefighters</h5>
+	            <img class="card-img-top" src="images/firefighters.jpg">
+	            <div class="card-body">
+	                <p>**Firefighter card description.</p>
+                    <p><a class="card-link" href="add_member.html">Add New Member</a></p>
+                    <p><a class="card-link" href="view_member.html">View Active Members</a></p>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-sm-6 col-md-4 d-flex align-items-stretch">
+	        <div class="card mx-auto mb-4" style="width: 80%">
+	            <h5 class="card-header">Certifications</h5>
+	            <img class="card-img-top" src="images/certifications.jpg">
+	            <div class="card-body">
+	                <p>**Certifications card description.</p>
+                    <p><a class="card-link" href="add_cert.html">Add New Certification</a></p>
+                    <p><a class="card-link" href="view_cert.html">View All Certifications</a></p>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="col-sm-6 col-md-4 d-flex align-items-stretch">
+	        <div class="card mx-auto mb-4" style="width: 80%">
+	            <h5 class="card-header">Reports</h5>
+	            <img class="card-img-top" src="images/reports.jpg">
+	            <div class="card-body">
+	                <p>**Report card description.</p>
+                    <p><a class="card-link" href="expired.html">Expired Certifications</a></p>
+                    <p><a class="card-link" href="members.html">Active Members</a></p>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+  </div>
 
 
 
