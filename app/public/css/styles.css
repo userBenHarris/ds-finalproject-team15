@@ -21,6 +21,13 @@ h1, .display-2 {
     border-radius: 15px;
 }
 
+h2{
+  color:maroon;
+  font-style: oblique;
+  font-variant: small-caps;
+  padding:30px;
+}
+
 h4, .display-4 {
     display: table;
     color: white;
@@ -29,6 +36,11 @@ h4, .display-4 {
     background-color: rgba(0,0,0,0.3);
     padding: .6vw;
     border-radius: 15px;
+}
+
+form{
+padding-left: 50px;
+padding-right: 100px;
 }
 
 .card-img-overlay br {
