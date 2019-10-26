@@ -56,6 +56,7 @@
                     <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
                 </div>
               </li>
+
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Reports
@@ -90,56 +91,105 @@
 
 
 <!-- BEGIN: INSERT CODE HERE -->
-<h2>Add Certifications</h2>
+
+
+
+<h2>Add Persons</h2>
 <br>
 <div class="container">
     <div class="row">
       <div id="mainContent" class="col-md">
-        <div id="certificationRecordsApp"> <!--1-->
+        <div id="personRecordsApp"> <!--1-->
           <form @submit.prevent="handleSubmit">
 
             <div class="form-group row">
-              <label for="inputCertificationName" class="col-sm-2 col-form-label">Certification Name</label>
+              <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputCertificationName" placeholder="Certification Name" v-model="recordCertification.certName">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordPerson.firstName">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputCertificationOrg" class="col-sm-2 col-form-label">Certification Organization</label>
+              <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputCertificationOrg" placeholder="Certification Organization" v-model="recordCertification.certOrg">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordPerson.lastName">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="inputExpiryPeriod" class="col-sm-2 col-form-label">Expiry Period</label>
+              <label for="inputRadioNumber" class="col-sm-2 col-form-label">Radio Number</label>
               <div class="col-sm-10">
-                <input type="number" class="form-control" id="inputExpiryPeriod" placeholder="Expiry Period" v-model="recordCertification.expTime">
+                <input type="number" class="form-control" id="inputRadioNumber" placeholder="Radio Number" v-model="recordPerson.radioNumber">
               </div>
             </div>
-
-
 
             <div class="form-group row">
+              <label for="inputStationNumber" class="col-sm-2 col-form-label">Station Number</label>
               <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Create Certification Record</button>
+                <input type="number" class="form-control" id="inputStationNumber" placeholder="Station Number" v-model="recordPerson.stationNumber">
               </div>
             </div>
-          </form>
+
+            <div class="form-group row">
+              <label for="inputisActive" class="col-sm-2 col-form-label">Status</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputisActive" placeholder="Status" v-model="recordPerson.isActive">
+              </div>
+            </div>
+
+
+          <div class="form-group row">
+            <label for="inputStreetAddress" class="col-sm-2 col-form-label">Street Address</label>
+            <div class="col-sm-10">
+              <input type="textarea" class="form-control" id="inputStreetAddress" placeholder="Street Address" v-model="recordPerson.streetAddress">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputWorkPhone" class="col-sm-2 col-form-label">Work Phone</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputWorkPhone" placeholder="Work Phone" v-model="recordPerson.workPhone">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputMobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
+            <div class="col-sm-10">
+              <input type="tel" class="form-control" id="inputMobilePhone" placeholder="Mobile Phone" v-model="recordPerson.mobilePhone">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputPositionId" class="col-sm-2 col-form-label">Position Id</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputPositionId" placeholder="Position Id" v-model="recordPerson.positionId">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputBirthDate" class="col-sm-2 col-form-label">Birth Date</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="inputBirthDate" placeholder="Birth Date" v-model="recordPerson.birthDate">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Sex At Birth</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputSexAtBirth" placeholder="M|F" v-model="recordPerson.sex">
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Create Person Record</button>
+            </div>
+          </div>
+        </form>
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-<!-- END: INSERT CODE HERE -->
 
 <footer class="bd-footer">
     <div class="container-fluid">
@@ -156,12 +206,14 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
+<script src="js/person.app.js"></script>
+<!--<script src="js/certification.app.js"></script>
+<script src="js/triage.app.js"></script>-->
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
