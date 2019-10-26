@@ -27,11 +27,9 @@ var personRecordsApp = new Vue({ //1-var
         console.error('RECORD POST ERROR:');
         console.error(err);
      });
-
-      this.handleReset();
     },
     handleEditSubmit(event) {
-      fetch('api/persons/edit.php', { //5
+      fetch('api/persons/edit.php', { //5change post to edit
         method:'POST',
         body: JSON.stringify(this.recordPerson) ,//3
         headers: {
@@ -41,15 +39,32 @@ var personRecordsApp = new Vue({ //1-var
       .then( response => response.json() )
       .then( json => { personRecordsApp.persons.push( json[0] ) }) //1&2
       .catch( err => {
-        console.error('RECORD POST ERROR:');
+        console.error('RECORD EDIT ERROR:');
+        console.error(err);
+     });
+    },
+    handleDelete(event) {
+      console.log('Delete');
+      fetch('api/persons/delete.php', { //5
+        method:'POST',
+        body: JSON.stringify(this.recordPerson) ,//3
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => { personRecordsApp.persons=json })
+      .then( console.log('After Fetch')) //1&2
+      .catch( err => {
+        console.error('RECORD DELETE ERROR:');
         console.error(err);
      });
 
-      this.handleReset();
     },
-    
+
     handleReset() {
       this.recordPerson = { //3 and 6-attribute list
+        personId: '',
         firstName: '',
         lastName: '',
         radioNumber: '',

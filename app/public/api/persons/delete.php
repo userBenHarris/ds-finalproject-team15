@@ -7,12 +7,12 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'DELETE from Person #4-attribute list
-   WHERE personId=this.personId'
+  'DELETE FROM Person #4-attribute list
+   WHERE personId=?'
 );
 
-$stmt->execute();
+$stmt->execute([$_POST['personId']]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../persons/?personId='.$personId); #5-members (foldername), personId (id attribute)
+header('Location: ../persons/'); #5-members (foldername), personId (id attribute)

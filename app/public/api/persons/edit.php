@@ -1,9 +1,5 @@
 <?php
 
-// Step 0: Validation
-use Ramsey\Uuid\Uuid;
-$personId = Uuid::uuid4()->toString(); #1-Id Attribute // i.e. 25769c6c-d34d-4bfe-ba98-e0ee856f3e7a
-
 // Step 1: Get a datase connection from our help class
 $db = DbConnection::getConnection();
 
@@ -27,9 +23,9 @@ $stmt->execute([           #4-attribute list
   $_POST['positionId'],
   $_POST['birthDate'],
   $_POST['sex'],
-  $id
+  $_POST['personId']
 ]);
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../persons/?personId='.$personId); #5-members (foldername), personId (id attribute)
+header('Location: ../persons/'); #5-members (foldername), personId (id attribute)
