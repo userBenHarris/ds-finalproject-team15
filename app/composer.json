@@ -1,9 +1,9 @@
 {
-    "name": "iu-msis/project-triage",
-    "description": "An in-class example project",
+    "name": "userBenHarris/ds-finalproject-team15",
+    "description": "A full-stack application utilizing concepts from the entire semester of Data and Systems for the Oconee County Fire Rescue group.",
     "license": "private",
     "authors": [{
-        "name": "Tom Gregory"
+        "name": "Team 15"
     }],
     "require": {
       "ramsey/uuid": "^3.8"

@@ -29,7 +29,6 @@
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">Oconee County Fire Rescue</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +37,15 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Persons
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="add_person.html">Add Persons</a>
+                  <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
+              </div>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Certifications
@@ -48,16 +56,6 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Persons
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="add_person.html">Add Persons</a>
-                    <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Reports
                   </a>
@@ -65,7 +63,7 @@
                       <a class="dropdown-item" href="expired.html">Expired Certifications</a>
                       <a class="dropdown-item" href="persons.html">View Active Members</a>
                   </div>
-              </li>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
@@ -89,10 +87,6 @@
     </div>
 </div>
 
-<!-- BEGIN: INSERT CODE HERE -->
-
-
-
 <div class="container-fluid">
 
 	<div class="row justify-content-center mt-4">
@@ -112,7 +106,7 @@
 	            <h5 class="card-header">Certifications</h5>
 	            <img class="card-img-top" src="images/certifications.jpg">
 	            <div class="card-body">
-	                <p>**Certifications card description.</p>
+	                <p>Use these links to add in new certifications, modify existing ones, or delete old records.</p>
                     <p><a class="card-link" href="add_cert.html">Add New Certification</a></p>
                     <p><a class="card-link" href="view_cert.html">View/Edit/Delete Certifications</a></p>
 	            </div>
@@ -123,20 +117,14 @@
 	            <h5 class="card-header">Reports</h5>
 	            <img class="card-img-top" src="images/reports.jpg">
 	            <div class="card-body">
-	                <p>**Report card description.</p>
+	                <p>Use these links to view pre-generated reports on key OCFR data.</p>
                     <p><a class="card-link" href="expired.html">Expired Certifications</a></p>
-
                     <p><a class="card-link" href="persons.html">View Active Persons</a></p>
 	            </div>
 	        </div>
 	    </div>
     </div>
   </div>
-
-
-
-
-<!-- END: INSERT CODE HERE -->
 
 <footer class="bd-footer">
     <div class="container-fluid">
@@ -150,7 +138,6 @@
     </div>
 </footer>
 
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -158,6 +145,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
