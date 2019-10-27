@@ -87,7 +87,7 @@
     </div>
 </div>
 
-        <div id=personRecordsApp style="padding:10px">
+        <div id="personRecordsApp" style="padding:10px">
           <table class="table table-sm table-hover">
             <thead>
               <tr>
@@ -123,7 +123,7 @@
             </tbody>
           </table>
 <br>
-                <!--  <div id="editPersonApp"> 1-->
+                <div id="editPersonApp">
                   <H2><strong>Edit Existing Record</strong></H2>
                     <form @submit.prevent=handleEditSubmit>
 
@@ -210,9 +210,9 @@
                       </div>
                     </div>
                   </form>
-                    <div>
-                    <input type="submit" @click="handleDelete" class="btn btn-primary" value="Delete Record">
-                  </div>
+                    <div style="padding:10px">
+                      <input type="submit" @click="handleDelete" class="btn btn-primary" value="Delete Record">
+                    </div>
                 </div>
 
 <footer class="bd-footer">

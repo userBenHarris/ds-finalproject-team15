@@ -87,7 +87,8 @@
     </div>
 </div>
 
-          <table class="table table-sm table-hover" id="certificationRecordsApp">
+        <div id="certificationRecordsApp" style="padding:10px">
+          <table class="table table-sm table-hover">
             <thead>
               <tr>
                 <th>ID</th>
@@ -107,7 +108,7 @@
           </table>
         </div>
 <br>
-  <div>
+  <div id="editCertificationApp">
     <h2><strong>Edit Existing Record</strong></h2>
       <form @submit.prevent="handleEditSubmit">
 
@@ -138,11 +139,11 @@
           </div>
         </div>
       </form>
-        <div>
-        <input type="submit" @click="handleDelete" class="btn btn-primary" value="Delete Record">
-      </div>
+        <div style="padding:10px">
+          <input type="submit" @click="handleDelete" class="btn btn-primary" value="Delete Record">
+        </div>
     </div>
-           
+
 <footer class="bd-footer">
     <div class="container-fluid">
         <br>
