@@ -5,6 +5,7 @@
 
 body {
     font-family: BentonSansRegular,Helvetica,Arial,sans-serif;
+
 }
 
 .navbar, footer {
@@ -23,7 +24,6 @@ h1, .display-2 {
 
 h2{
   color:maroon;
-  font-style: oblique;
   font-variant: small-caps;
   padding:30px;
 }

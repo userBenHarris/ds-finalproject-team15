@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="css/styles.css" >
 
-    <title>View Certifications</title>
+    <title>View All Firefighters</title>
 
     <script>
     function Tom() {
@@ -87,62 +87,47 @@
     </div>
 </div>
 
-        <div id="certificationRecordsApp" style="padding:10px">
-          <table class="table table-sm table-hover">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Certification Name</th>
-                <th>Certification Organization</th>
-                <th>Expiry Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="c in certifications" @click="handleRowClick(c)">
-                <td>{{ c.certId }}</td>
-                <td>{{ c.certName }}</td>
-                <td>{{ c.certOrg }}</td>
-                <td>{{ c.expTime }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+<h2><strong>Active Members Report</strong></h2>
+<div style="padding-right:10px;padding-left:10px; padding-bottom:10px">
+<table class="table table-bordered"> <!--sourced from https://getbootstrap.com/docs/4.3/content/tables/ -->
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Position</th>
+      <th scope="col">Certification(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Kathryn</td>
+      <td>Pride</td>
+      <td>Chief</td>
+      <td><ul><li>Firefighter II</li><li>CPR</li><li>HAZMAT</li></ul></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Piotr</td>
+      <td>Rasputin</td>
+      <td>Fireman</td>
+      <td><ul><li>EMT-Adv</li><li>CPR</li><li>Due Regard</li></ul></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Warren</td>
+      <td>Worthington III</td>
+      <td>In training</td>
+      <td><ul><li>Paramedic</li><li>CPR</li><li>Due Regard</li><li>Firefighter I</li></ul></td>
+    </tr>
+  </tbody>
+</table>
 <br>
-  <div id="editCertificationApp">
-    <h2><strong>Edit Existing Record</strong></h2>
-      <form @submit.prevent="handleEditSubmit">
-
-        <div class="form-group row">
-          <label for="editCertificationName" class="col-sm-2 col-form-label">Certification Name</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="editCertificationName" placeholder="Certification Name" v-model="recordCertification.certName">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="editCertificationOrg" class="col-sm-2 col-form-label">Certification Organization</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="editCertificationOrg" placeholder="Certification Organization" v-model="recordCertification.certOrg">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <label for="editExpiryPeriod" class="col-sm-2 col-form-label">Expiry Period</label>
-          <div class="col-sm-10">
-            <input type="number" class="form-control" id="editExpiryPeriod" placeholder="Expiry Period" v-model="recordCertification.expTime">
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Update Certification Record</button>
-          </div>
-        </div>
-      </form>
-        <div style="padding:10px">
-          <input type="submit" @click="handleDelete" class="btn btn-primary" value="Delete Record">
-        </div>
-    </div>
+<!-- This button will expand the list and also be able to refresh the data in case members are added or updated -->
+<button type="button" class="btn btn-dark">Refresh List</button> <!-- sourced from https://getbootstrap.com/docs/4.0/components/buttons/ -->
+<br>
+</div>
 
 <footer class="bd-footer">
     <div class="container-fluid">
@@ -163,7 +148,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="js/certification.app.js"></script>
+<script src="js/person.app.js"></script>
 
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
