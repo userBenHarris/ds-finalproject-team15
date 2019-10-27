@@ -29,7 +29,6 @@
 </head>
 <body>
 
-
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">Oconee County Fire Rescue</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,6 +37,15 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Persons
+              </a>
+              <div class="dropdown-menu">
+                  <a class="dropdown-item" href="add_person.html">Add Persons</a>
+                  <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
+              </div>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Certifications
@@ -48,15 +56,6 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Persons
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="add_person.html">Add Persons</a>
-                    <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Reports
                   </a>
@@ -64,7 +63,7 @@
                       <a class="dropdown-item" href="expired.html">Expired Certifications</a>
                       <a class="dropdown-item" href="persons.html">View Active Members</a>
                   </div>
-              </li>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
@@ -138,7 +137,6 @@
         <br>
     </div>
 </footer>
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
