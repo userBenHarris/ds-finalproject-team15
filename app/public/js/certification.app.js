@@ -27,9 +27,42 @@ var certificationRecordsApp = new Vue({ //1-var
         console.error('RECORD POST ERROR:');
         console.error(err);
      });
-
-      this.handleReset();
     },
+    handleEditSubmit(event) {
+      fetch('api/certifications/edit.php', { //5change post to edit
+        method:'POST',
+        body: JSON.stringify(this.recordCertification) ,//3
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => { certificationRecordsApp.certifications.push( json[0] ) }) //1&2
+      .catch( err => {
+        console.error('RECORD EDIT ERROR:');
+        console.error(err);
+     });
+    },
+
+    handleDelete(event) {
+      console.log('Delete');
+      fetch('api/certifications/delete.php', { //5
+        method:'POST',
+        body: JSON.stringify(this.recordCertification) ,//3
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => { certificationRecordsApp.certifications=json })
+      .then( console.log('After Fetch')) //1&2
+      .catch( err => {
+        console.error('RECORD DELETE ERROR:');
+        console.error(err);
+     });
+
+    },
+
     handleReset() {
       this.recordCertification = { //3 and 6-attribute list
         certName:'',
