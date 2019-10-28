@@ -7,7 +7,7 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare(
   'UPDATE Person    #2-Table name
     SET firstName=?,lastName=?,radioNumber=?,stationNumber=?, isActive=?,   #4-attribute list
-    streetAddress=?,workPhone=?, mobilePhone=?, positionId=?,birthDate=?, sex=? #4-attribute list
+    streetAddress=?,workPhone=?, mobilePhone=?, positionId=?,birthDate=?, sex=?, email=?, positionTitle=?#4-attribute list
    WHERE personId=?'
 );
 
@@ -23,6 +23,8 @@ $stmt->execute([           #4-attribute list
   $_POST['positionId'],
   $_POST['birthDate'],
   $_POST['sex'],
+  $_POST['email'],
+  $_POST['positionTitle'],
   $_POST['personId']
 ]);
 
