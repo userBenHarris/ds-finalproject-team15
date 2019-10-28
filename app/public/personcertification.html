@@ -1,4 +1,4 @@
-<!doctype html> <!--Design and CSS leveraged from a S310 project in undergrad -->
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -39,32 +39,24 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Firefighters
-              </a>
-              <div class="dropdown-menu">
-                  <a class="dropdown-item" href="add_member.html">Add Members</a>
-                  <a class="dropdown-item" href="view_member.html">Edit/Delete Members</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Certifications
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="add_cert.html">Add Certifications</a>
-                    <a class="dropdown-item" href="view_cert.html">Edit/Delete Certifications</a>
+                    <a class="dropdown-item" href="view_cert.html">View certifications</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Reports
+                    Members
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="expired.html">Expired Certifications</a>
-                    <a class="dropdown-item" href="members.html">View Active Members</a>
+                    <a class="dropdown-item" href="add_member.html">Add Members</a>
+                    <a class="dropdown-item" href="view_member.html">View Members</a>
                 </div>
             </li>
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
@@ -87,50 +79,53 @@
         </div>
     </div>
 </div>
-<br>
 
-<h2><strong>Active Members Report</strong></h2>
-<div style="padding-right:10px;padding-left:10px; padding-bottom:10px">
-<table class="table table-bordered"> <!--sourced from https://getbootstrap.com/docs/4.3/content/tables/ -->
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Position</th>
-      <th scope="col">Certification(s)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Kathryn</td>
-      <td>Pride</td>
-      <td>Chief</td>
-      <td><ul><li>Firefighter II</li><li>CPR</li><li>HAZMAT</li></ul></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Piotr</td>
-      <td>Rasputin</td>
-      <td>Fireman</td>
-      <td><ul><li>EMT-Adv</li><li>CPR</li><li>Due Regard</li></ul></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Warren</td>
-      <td>Worthington III</td>
-      <td>In training</td>
-      <td><ul><li>Paramedic</li><li>CPR</li><li>Due Regard</li><li>Firefighter I</li></ul></td>
-    </tr>
-  </tbody>
-</table>
+<!-- BEGIN: INSERT CODE HERE -->
+<h2>Assign Certifications</h2>
 <br>
-<!-- This button will expand the list and also be able to refresh the data in case members are added or updated -->
-<button type="button" class="btn btn-dark">Refresh List</button> <!-- sourced from https://getbootstrap.com/docs/4.0/components/buttons/ -->
-<button type="button" class="btn btn-dark">Export Report</button>
-<br>
-</div>
+<div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+        <div id="personRecordsApp" class= "form-group row"> <!--1-->
+          <label class="col-sm-2 col-form-label">Choose Person:</label>
+            <select class="form-group row" v-model="selectedPerson.personId">
+              <option v-for="p in persons" v-bind:value="p.personId">
+              {{p.personId}}-{{p.firstName}} {{p.lastName}}
+              </option>
+            </select>
+          <!--  <span>Selected:{{personCertification.personId}}</span>-->
+        </div>
+
+        <div id="certificationRecordsApp" class="form-group row"> <!--1-->
+          <label class="col-sm-2 col-form-label">Choose Certificate:</label>
+            <select class="form-group row" v-model="selectedCertification.certId">
+              <option v-for="c in certifications" v-bind:value="c.certId">
+              {{c.certId}}-{{c.certName}}
+              </option>
+            </select>
+        </div>
+      <form id=personCertificationsApp @submit.prevent="handleSubmit" >
+        <div class="form-group row">
+          <label for="inputCertDate" class="col-sm-2 col-form-label">Certificate Date</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="inputCertDate" placeholder="Cert Date" v-model="personCertification.certDate">
+          </div>
+        </div>
+
+        <div class="form-group row">
+        <input type="submit" class="btn btn-primary" value="Add Record">
+        </div>
+
+  </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!-- END: INSERT CODE HERE -->
 
 <footer class="bd-footer">
     <div class="container-fluid">
@@ -150,7 +145,11 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="js/certification.app.js"></script>
+<script src="js/person.app.js"></script>
+<script src=js/personcertification.app.js></script>
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

@@ -59,23 +59,11 @@
 
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Person Certifications
-                  </a>
-                  <div class="dropdown-menu">
-                      <a class="dropdown-item" href="personcertification.html">Assign Certifications</a>
-                      <a class="dropdown-item" href="ViewCertificationsByPerson.html">View certifications by persons</a>
-                      <a class="dropdown-item" href="ViewPersonsByCertification.html">View persons by certifications</a>
-                  </div>
-                </li>
-
-
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Reports
                   </a>
                   <div class="dropdown-menu">
-                      <a class="dropdown-item" href="ExpiredCertifications.html">Expired Certifications</a>
-                      <a class="dropdown-item" href="MemberNumbers.html">Station and Radio Numbers</a>
+                      <a class="dropdown-item" href="expired.html">Expired Certifications</a>
+                      <a class="dropdown-item" href="persons.html">View Active Members</a>
                   </div>
               </li>
           </ul>
@@ -102,53 +90,46 @@
 </div>
 
 <!-- BEGIN: INSERT CODE HERE -->
+        <div id=personCertificationsApp>
+          <div class="filter">
+              <label class="col-sm-2 col-form-label">Choose Person:</label>
+                <select class="form-group row" v-model="filter.personId">
+                  <option v-for="p in personCertifications" v-bind:value="p.personId">
+                  {{p.personId}}-{{p.firstName}} {{p.lastName}}
+                  </option>
+            </select>
+          </div>
 
+                <div v-for="pc in personCertifications"
+                v-if="filter.personId == pc.personId">
+                  Name: {{ pc.firstName }} {{ pc.lastName }}<br>
+                  DOB:  {{ pc.birthDate }}<br>
+                  Sex:  {{ pc.sex }}<br>
+                  Radio Number: {{ pc.radioNumber }}<br>
+                  Station Number: {{ pc.stationNumber }}<br>
+                  Status: {{ pc.isActive }}<br>
+                  Street Address: {{ pc.streetAddress }}<br>
+                  Work Phone: {{ pc.workPhone }}<br>
+                  Mobile: {{ pc.mobilePhone }}<br>
+                  Position: {{ pc.positionId }}<br>
+                </div>
+                <table class="table table-sm table-hover" class=col-md-6>
+                  <thead>
+                    <th>Certificate Name</th>
+                    <th>Certifying Agency</th>
+                    <th>Valid Until</th>
+                    </thead>
+                    <tbody>
+              <tr v-for="pc in personCertifications"
+              v-if="filter.personId=='' || filter.personId == pc.personId">
+                <td>{{ pc.certName }}</td>
+                <td>{{ pc.certOrg }}</td>
+                <td>{{ pc.certDate }}</td>
+              </tr>
 
-
-<div class="container-fluid">
-
-	<div class="row justify-content-center mt-4">
-	    <div class="col-sm-6 col-md-4 d-flex align-items-stretch">
-	        <div class="card mx-auto mb-4" style="width: 80%">
-	            <h5 class="card-header">Firefighters</h5>
-	            <img class="card-img-top" src="images/firefighters.jpg">
-	            <div class="card-body">
-	                <p>Use these links to add in new recruits, modify existing ones, or delete old records.</p>
-                    <p><a class="card-link" href="add_person.html">Add New Person</a></p>
-                    <p><a class="card-link" href="view_person.html">View/Edit/Delete Persons</a></p>
-	            </div>
-	        </div>
-	    </div>
-	    <div class="col-sm-6 col-md-4 d-flex align-items-stretch">
-	        <div class="card mx-auto mb-4" style="width: 80%">
-	            <h5 class="card-header">Certifications</h5>
-	            <img class="card-img-top" src="images/certifications.jpg">
-	            <div class="card-body">
-	                <p>**Certifications card description.</p>
-                    <p><a class="card-link" href="add_cert.html">Add New Certification</a></p>
-                    <p><a class="card-link" href="view_cert.html">View/Edit/Delete Certifications</a></p>
-	            </div>
-	        </div>
-	    </div>
-	    <div class="col-sm-6 col-md-4 d-flex align-items-stretch">
-	        <div class="card mx-auto mb-4" style="width: 80%">
-	            <h5 class="card-header">Reports</h5>
-	            <img class="card-img-top" src="images/reports.jpg">
-	            <div class="card-body">
-	                <p>**Report card description.</p>
-                    <p><a class="card-link" href="personcertification.html">Person Certifications</a></p>
-
-                    <p><a class="card-link" href="persons.html">View Active Persons</a></p>
-	            </div>
-	        </div>
-	    </div>
-    </div>
-  </div>
-
-
-
-
-<!-- END: INSERT CODE HERE -->
+            </tbody>
+          </table>
+        </div>
 
 <footer class="bd-footer">
     <div class="container-fluid">
@@ -170,6 +151,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="js/person.app.js"></script>
+<script src="js/personcertification.app.js"></script>
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
