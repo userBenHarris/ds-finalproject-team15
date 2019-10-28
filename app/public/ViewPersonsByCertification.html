@@ -100,39 +100,33 @@
         <div id=personCertificationsApp>
           <div class="filter">
               <label class="col-sm-2 col-form-label"><h2><strong>Choose Person:</strong></h2></label>
-                <select class="form-group row" v-model="filter.personId">
-                  <option v-for="p in personCertifications" v-bind:value="p.personId">
-                  {{p.personId}}-{{p.firstName}} {{p.lastName}}
+                <select class="form-group row" v-model="filter.certId">
+                  <option v-for="c in personCertifications" v-bind:value="c.certId">
+                  {{c.certId}}-{{c.certName}}
                   </option>
             </select>
           </div>
+          <div v-for="c in personCertifications"
+          v-if="filter.certId == c.certId">
+            Certificate Name: {{ c.certName }}<br>
+            Certifying Organization:  {{ c.certOrg }}<br>
+            Period:  {{ c.expTime }} years<br>
+          </div>
 
-                <div v-for="pc in personCertifications"
-                v-if="filter.personId == pc.personId">
-                  Name: {{ pc.firstName }} {{ pc.lastName }}<br>
-                  DOB:  {{ pc.birthDate }}<br>
-                  Sex:  {{ pc.sex }}<br>
-                  Radio Number: {{ pc.radioNumber }}<br>
-                  Station Number: {{ pc.stationNumber }}<br>
-                  <div v-if="p.isActive==1">Status:Active</div><br>
-                  <div v-else="p.isActive==0">Status:Inactive</div><br>
-                  Street Address: {{ pc.streetAddress }}<br>
-                  Work Phone: {{ pc.workPhone }}<br>
-                  Mobile: {{ pc.mobilePhone }}<br>
-                  Position: {{ pc.positionTitle }}<br>
-                </div>
-                <table class="table table-sm table-hover" class=col-md-6>
-                  <thead>
-                    <th>Certificate Name</th>
-                    <th>Certifying Agency</th>
-                    <th>Valid Until</th>
-                    </thead>
-                    <tbody>
+
+          <table class="table table-sm table-hover" class=col-md-6>
+            <thead>
+              <th>Name</th>
+              <th>Certificate Date</th>
+              </thead>
+              <tbody>
               <tr v-for="pc in personCertifications"
-              v-if="filter.personId=='' || filter.personId == pc.personId">
-                <td>{{ pc.certName }}</td>
-                <td>{{ pc.certOrg }}</td>
+              v-if="filter.certId=='' || filter.certId == pc.certId">
+                <td>{{ pc.firstName }} {{ pc.lastName }}</td>
                 <td>{{ pc.certDate }}</td>
+                <td v-if="p.isActive==1">Status:Active</td><br>
+                <td v-else="p.isActive==0">Status:Inactive</td><br>
+                
               </tr>
 
             </tbody>

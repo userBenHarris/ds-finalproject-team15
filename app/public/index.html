@@ -1,4 +1,4 @@
-<!doctype html> <!--Design and CSS leveraged from a S310 project in undergrad -->
+<!doctype html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -34,36 +34,45 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Persons
-              </a>
-              <div class="dropdown-menu">
-                  <a class="dropdown-item" href="add_person.html">Add Persons</a>
-                  <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
-              </div>
-            </li>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Persons
+        </a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="add_person.html">Add Persons</a>
+            <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
+        </div>
+      </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Certifications
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="add_cert.html">Add Certifications</a>
-                    <a class="dropdown-item" href="view_cert.html">View Certifications</a>
+                    <a class="dropdown-item" href="view_cert.html">View/Edit/Delete Certifications</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Person Certifications
+                  </a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="personcertification.html">Assign Certifications</a>
+                      <a class="dropdown-item" href="ViewCertificationsByPerson.html">View Certifications by Persons</a>
+                      <a class="dropdown-item" href="ViewPersonsByCertification.html">View Persons by Certifications</a>
+                  </div>
+                </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Reports
                   </a>
                   <div class="dropdown-menu">
-                      <a class="dropdown-item" href="expired.html">Expired Certifications</a>
-                      <a class="dropdown-item" href="persons.html">View Active Members</a>
+                      <a class="dropdown-item" href="ExpiredCertifications.html">Expired Certifications</a>
+                      <a class="dropdown-item" href="MemberNumbers.html">Station and Radio Numbers</a>
                   </div>
-            </li>
+              </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
@@ -106,9 +115,21 @@
 	            <h5 class="card-header">Certifications</h5>
 	            <img class="card-img-top" src="images/certifications.jpg">
 	            <div class="card-body">
-	                <p>Use these links to add in new certifications, modify existing ones, or delete old records.</p>
+	                <p>Use these links to add in new recruits, modify existing ones, or delete old records.</p>
                     <p><a class="card-link" href="add_cert.html">Add New Certification</a></p>
                     <p><a class="card-link" href="view_cert.html">View/Edit/Delete Certifications</a></p>
+	            </div>
+	        </div>
+	    </div>
+      <div class="col-sm-6 col-md-4 d-flex align-items-stretch">
+	        <div class="card mx-auto mb-4" style="width: 80%">
+	            <h5 class="card-header">Person Certifications</h5>
+	            <img class="card-img-top" src="images/certifications.jpg">
+	            <div class="card-body">
+	                <p>Use these links to view pregerated reports surrounding information on active members.</p>
+                    <p><a class="card-link" href="personcertification.html">Assign Certifications</a></p>
+                    <p><a class="card-link" href="ViewCertificationsByPerson.html">View Certifications by Persons</a></p>
+                    <p><a class="card-link" href="ViewPersonsByCertification.html">View Persons by Certifications</a></p>
 	            </div>
 	        </div>
 	    </div>
@@ -117,9 +138,9 @@
 	            <h5 class="card-header">Reports</h5>
 	            <img class="card-img-top" src="images/reports.jpg">
 	            <div class="card-body">
-	                <p>Use these links to find pre-generated reports on members with expired certifications and all current active members.</p>
-                    <p><a class="card-link" href="expired.html">Expired Certifications</a></p>
-                    <p><a class="card-link" href="persons.html">View Active Members</a></p>
+	                <p>Use these links to view pregenerated reports on various key metrics.</p>
+                    <p><a class="card-link" href="ExpiredCertifications.html">Expired Certifications</a></p>
+                    <p><a class="card-link" href="MemberNumbers.html">View Active Persons</a></p>
 	            </div>
 	        </div>
 	    </div>
@@ -138,6 +159,7 @@
     </div>
 </footer>
 
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -145,7 +167,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

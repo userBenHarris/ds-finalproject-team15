@@ -45,6 +45,7 @@ var personRecordsApp = new Vue({ //1-var
         console.error('RECORD POST ERROR:');
         console.error(err);
      });
+     this.handleReset();
     },
 
     handleEditSubmit(event) {
@@ -62,6 +63,8 @@ var personRecordsApp = new Vue({ //1-var
         console.error('RECORD EDIT ERROR:');
         console.error(err);
      });
+
+     this.handleReset();
     },
     handleDelete(event) {
       console.log('Delete');
@@ -79,6 +82,7 @@ var personRecordsApp = new Vue({ //1-var
         console.error('RECORD DELETE ERROR:');
         console.error(err);
      });
+     this.handleReset();
 
     },
 

@@ -97,44 +97,39 @@
     </div>
 </div>
 
-        <div id=personCertificationsApp>
+        <div id=personRecordsApp>
           <div class="filter">
-              <label class="col-sm-2 col-form-label"><h2><strong>Choose Person:</strong></h2></label>
-                <select class="form-group row" v-model="filter.personId">
-                  <option v-for="p in personCertifications" v-bind:value="p.personId">
-                  {{p.personId}}-{{p.firstName}} {{p.lastName}}
+              <label class="col-sm-2 col-form-label"><h2><strong>Choose Station:</strong></h2></label>
+                <select class="form-group row" v-model="filter.stationNumber">
+                  <option value="">(all)</option>
+                  <option v-for="s in stationNumbers" v-bind:value="s.stationNumber">
+                  {{s.stationNumber}}
+                  </option>
+            </select>
+          </div>
+          <div class="filter">
+              <label class="col-sm-2 col-form-label">Choose Radio:</label>
+                <select class="form-group row" v-model="filter.radioNumber">
+                  <option value="">(all)</option>
+                  <option v-for="r in radioNumbers" v-bind:value="r.radioNumber">
+                  {{r.radioNumber}}
                   </option>
             </select>
           </div>
 
-                <div v-for="pc in personCertifications"
-                v-if="filter.personId == pc.personId">
-                  Name: {{ pc.firstName }} {{ pc.lastName }}<br>
-                  DOB:  {{ pc.birthDate }}<br>
-                  Sex:  {{ pc.sex }}<br>
-                  Radio Number: {{ pc.radioNumber }}<br>
-                  Station Number: {{ pc.stationNumber }}<br>
-                  <div v-if="p.isActive==1">Status:Active</div><br>
-                  <div v-else="p.isActive==0">Status:Inactive</div><br>
-                  Street Address: {{ pc.streetAddress }}<br>
-                  Work Phone: {{ pc.workPhone }}<br>
-                  Mobile: {{ pc.mobilePhone }}<br>
-                  Position: {{ pc.positionTitle }}<br>
-                </div>
-                <table class="table table-sm table-hover" class=col-md-6>
-                  <thead>
-                    <th>Certificate Name</th>
-                    <th>Certifying Agency</th>
-                    <th>Valid Until</th>
-                    </thead>
-                    <tbody>
-              <tr v-for="pc in personCertifications"
-              v-if="filter.personId=='' || filter.personId == pc.personId">
-                <td>{{ pc.certName }}</td>
-                <td>{{ pc.certOrg }}</td>
-                <td>{{ pc.certDate }}</td>
+          <table class="table table-sm table-hover" class=col-md-6>
+            <thead>
+              <th>Name</th>
+              <th>Work Phone</th>
+              <th>Email</th>
+              </thead>
+              <tbody>
+              <tr v-for="p in persons"
+              v-if="((filter.stationNumber=='' && filter.stationNumber=='')||(filter.stationNumber == p.stationNumber && filter.radioNumber == p.radioNumber)) ">
+                <td>{{ p.firstName }} {{ p.lastName }}</td>
+                <td>{{ p.workPhone }}</td>
+                <td>{{ p.email }}</td>
               </tr>
-
             </tbody>
           </table>
         </div>
@@ -151,7 +146,6 @@
     </div>
 </footer>
 
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -159,8 +153,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="js/person.app.js"></script>
 <script src="js/personcertification.app.js"></script>
+<script src="js/person.app.js"></script>
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

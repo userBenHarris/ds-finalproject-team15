@@ -5,7 +5,7 @@ $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
 $stmt = $db->prepare(
-  'UPDATE Person    #2-Table name
+  'UPDATE Certification    #2-Table name
     SET certName=?, certOrg=?, expTime=? #4-attribute list
    WHERE certId=?'
 );

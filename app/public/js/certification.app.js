@@ -33,6 +33,45 @@ var certificationRecordsApp = new Vue({ //1-var
 
       this.handleReset();
     },
+
+    handleEditSubmit(event) {
+      fetch('api/certifications/edit.php', { //5change post to edit
+        method:'POST',
+        body: JSON.stringify(this.recordCertification) ,//3
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => { certificationRecordsApp.certifications.push( json[0] ) })
+      .then(this.fetchCertifications()) //1&2
+      .catch( err => {
+        console.error('RECORD EDIT ERROR:');
+        console.error(err);
+     });
+     this.handleReset();
+    },
+
+    handleDelete(event) {
+      console.log('Delete');
+      fetch('api/certifications/delete.php', { //5
+        method:'POST',
+        body: JSON.stringify(this.recordCertification) ,//3
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( response => response.json() )
+      .then( json => { certificationRecordsApp.certifications=json }) //1&2
+      .then(this.fetchCertifications())
+      .catch( err => {
+        console.error('RECORD DELETE ERROR:');
+        console.error(err);
+     });
+     this.handleReset();
+
+    },
+
     handleReset() {
       this.recordCertification = { //3 and 6-attribute list
         certName:'',
@@ -41,7 +80,7 @@ var certificationRecordsApp = new Vue({ //1-var
       }
     },
     handleRowClick(certification) {      //??????
-    certificationRecordsApp.certification = certification; //????
+    certificationRecordsApp.recordCertification = certification; //????
   },
 
   }, // end methods
