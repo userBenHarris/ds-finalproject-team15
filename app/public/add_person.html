@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link href="https://assets.iu.edu/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="css/styles.css" >
+
+    <title>Oconee County Fire Rescue</title>
+
+    <script>
+    function Tom() {
+        if (document.getElementById("search").value.toLowerCase() == "tom") {
+            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank')
+        }
+    }
+    </script>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Oconee County Fire Rescue</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Certifications
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="add_cert.html">Add Certifications</a>
+                    <a class="dropdown-item" href="view_cert.html">View certifications</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Persons
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="add_person.html">Add Persons</a>
+                    <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
+                </div>
+              </li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Reports
+                  </a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="expired.html">Expired Certifications</a>
+                      <a class="dropdown-item" href="persons.html">View Active Members</a>
+                  </div>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="Tom()" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
+
+<div class="card" style="border: none">
+	<div data-aos="fade-zoom-in" data-aos-duration="3000">
+    	<img src="images/firetruck.jpg" class="img-fluid">
+    </div>
+    <div class="card-img-overlay">
+    	<div class="row">
+    		<div class="col-6">
+		        <div data-aos="fade-right" data-aos-duration="2000" data-aos-delay="2000">
+		            <h1 class="display-2" style="font-size:4vw;">Saving Lives and Property.</h1>
+		        </div>
+		    </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- BEGIN: INSERT CODE HERE -->
+
+
+
+<h2>Add Persons</h2>
+<br>
+<div class="container">
+    <div class="row">
+      <div id="mainContent" class="col-md">
+        <div id="personRecordsApp"> <!--1-->
+          <form @submit.prevent="handleSubmit">
+
+            <div class="form-group row">
+              <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordPerson.firstName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputLastName" class="col-sm-2 col-form-label">Last Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" v-model="recordPerson.lastName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputRadioNumber" class="col-sm-2 col-form-label">Radio Number</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputRadioNumber" placeholder="Radio Number" v-model="recordPerson.radioNumber">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputStationNumber" class="col-sm-2 col-form-label">Station Number</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputStationNumber" placeholder="Station Number" v-model="recordPerson.stationNumber">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="inputisActive" class="col-sm-2 col-form-label">Status</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="inputisActive" placeholder="Status" v-model="recordPerson.isActive">
+              </div>
+            </div>
+
+
+          <div class="form-group row">
+            <label for="inputStreetAddress" class="col-sm-2 col-form-label">Street Address</label>
+            <div class="col-sm-10">
+              <input type="textarea" class="form-control" id="inputStreetAddress" placeholder="Street Address" v-model="recordPerson.streetAddress">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputWorkPhone" class="col-sm-2 col-form-label">Work Phone</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputWorkPhone" placeholder="Work Phone" v-model="recordPerson.workPhone">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputMobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
+            <div class="col-sm-10">
+              <input type="tel" class="form-control" id="inputMobilePhone" placeholder="Mobile Phone" v-model="recordPerson.mobilePhone">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputPositionId" class="col-sm-2 col-form-label">Position Id</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="inputPositionId" placeholder="Position Id" v-model="recordPerson.positionId">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputBirthDate" class="col-sm-2 col-form-label">Birth Date</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="inputBirthDate" placeholder="Birth Date" v-model="recordPerson.birthDate">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Sex At Birth</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputSexAtBirth" placeholder="M|F" v-model="recordPerson.sex">
+            </div>
+          </div>
+
+
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Create Person Record</button>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+
+<footer class="bd-footer">
+    <div class="container-fluid">
+        <br>
+        <div class="d-flex justify-content-around">
+            <div>Oconee County Fire Rescue</div>
+            <div>(706) 796-3975 | 1291 Greensboro Highway, Watkinsville, GA 30677</div>
+            <div>Copyright © 2019</div>
+        </div>
+        <br>
+    </div>
+</footer>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="js/person.app.js"></script>
+<!--<script src="js/certification.app.js"></script>
+<script src="js/triage.app.js"></script>-->
+<!-- AOS Library -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</body>
+</html>

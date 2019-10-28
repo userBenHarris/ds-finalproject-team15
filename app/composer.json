@@ -1,0 +1,14 @@
+{
+    "name": "user-ben-harris/ds-finalproject-team15",
+    "description": "A full-stack application utilizing concepts from the entire semester of Data and Systems for the Oconee County Fire Rescue group.",
+    "license": "private",
+    "authors": [{
+        "name": "Team 15"
+    }],
+    "require": {
+      "ramsey/uuid": "^3.8"
+    },
+    "autoload": {
+        "classmap": ["class/DbConnection.php"]
+    }
+}
