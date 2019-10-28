@@ -114,11 +114,12 @@
                   Sex:  {{ pc.sex }}<br>
                   Radio Number: {{ pc.radioNumber }}<br>
                   Station Number: {{ pc.stationNumber }}<br>
-                  Status: {{ pc.isActive }}<br>
+                  <div v-if="p.isActive==1">Status:Active</div><br>
+                  <div v-else="p.isActive==0">Status:Inactive</div><br>
                   Street Address: {{ pc.streetAddress }}<br>
                   Work Phone: {{ pc.workPhone }}<br>
                   Mobile: {{ pc.mobilePhone }}<br>
-                  Position: {{ pc.positionId }}<br>
+                  Position: {{ pc.positionTitle }}<br>
                 </div>
                 <table class="table table-sm table-hover" class=col-md-6>
                   <thead>

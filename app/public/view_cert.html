@@ -97,7 +97,12 @@
     </div>
 </div>
 
-          <table class="table table-sm table-hover" id="certificationRecordsApp">
+
+<!-- BEGIN: INSERT CODE HERE -->
+
+
+  <div  id="certificationRecordsApp">
+          <table class="table table-sm table-hover">
             <thead>
               <tr>
                 <th>ID</th>
@@ -115,7 +120,41 @@
               </tr>
             </tbody>
           </table>
-        </div>
+
+          <form @submit.prevent=handleEditSubmit>
+
+            <div class="form-group row">
+              <label for="editCertName" class="col-sm-2 col-form-label">Certification Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="editCertName" placeholder="Certification Name" v-model="recordCertification.certName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="editCertOrg" class="col-sm-2 col-form-label">Certification Organization</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="editCertOrg" placeholder="Certification Organization" v-model="recordCertification.certOrg">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="editExpTime" class="col-sm-2 col-form-label">Expiry Period</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="editExpTime" placeholder="Years" v-model="recordCertification.expTime">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Update Certification Record</button>
+              </div>
+            </div>
+            </form>
+            <div>
+            <input type="submit" @click="handleDelete" class="btn btn-primary" value="Delete Record">
+            </div>
+          </div>
+
 
 <footer class="bd-footer">
     <div class="container-fluid">

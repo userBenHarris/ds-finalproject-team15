@@ -63,6 +63,7 @@ var personRecordsApp = new Vue({ //1-var
         console.error('RECORD EDIT ERROR:');
         console.error(err);
      });
+
      this.handleReset();
     },
     handleDelete(event) {
@@ -82,6 +83,7 @@ var personRecordsApp = new Vue({ //1-var
         console.error(err);
      });
      this.handleReset();
+
     },
 
     handleReset() {
@@ -96,9 +98,7 @@ var personRecordsApp = new Vue({ //1-var
         mobilePhone: '',
         positionId: '',
         birthDate: '',
-        sex: '',
-        email:'',
-        positionTitle:''
+        sex: ''
       }
     },
     handleRowClick(person) {      //??????

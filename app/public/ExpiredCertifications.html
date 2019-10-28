@@ -52,7 +52,7 @@
                   </a>
                   <div class="dropdown-menu">
                       <a class="dropdown-item" href="add_cert.html">Add Certifications</a>
-                      <a class="dropdown-item" href="view_cert.html">View Certifications</a>
+                      <a class="dropdown-item" href="view_cert.html">View/Edit/Delete Certifications</a>
                   </div>
               </li>
               <li class="nav-item dropdown">
@@ -82,6 +82,7 @@
         </div>
     </nav>
 
+
 <div class="card" style="border: none">
 	<div data-aos="fade-zoom-in" data-aos-duration="3000">
     	<img src="images/firetruck.jpg" class="img-fluid">
@@ -97,9 +98,10 @@
     </div>
 </div>
 
+<!-- BEGIN: INSERT CODE HERE -->
         <div id=personCertificationsApp>
           <div class="filter">
-              <label class="col-sm-2 col-form-label"><h2><strong>Choose Certification:</strong></h2></label>
+              <label class="col-sm-2 col-form-label">Choose Certification:</label>
                 <select class="form-group row" v-model="filter.certId">
                   <option value="">(all)</option>
                   <option v-for="c in certifications" v-bind:value="c.certId">
@@ -107,6 +109,7 @@
                   </option>
             </select>
             </div>
+
           <table class="table table-sm table-hover" class=col-md-6>
             <thead>
               <th>Name</th>
@@ -121,7 +124,10 @@
 
             </tbody>
           </table>
+
+
         </div>
+
 
 <footer class="bd-footer">
     <div class="container-fluid">
