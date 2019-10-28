@@ -7,8 +7,8 @@ $db = DbConnection::getConnection();
 $stmt = $db->prepare(
   'INSERT INTO Person    #2-Table name
     (firstName, lastName, radioNumber, stationNumber, isActive,   #4-attribute list
-    streetAddress, workPhone, mobilePhone, positionId, birthDate, sex) #4-attribute list
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    streetAddress, workPhone, mobilePhone, positionId, birthDate, sex, email, positionTitle) #4-attribute list
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([           #4-attribute list
@@ -22,7 +22,9 @@ $stmt->execute([           #4-attribute list
   $_POST['mobilePhone'],
   $_POST['positionId'],
   $_POST['birthDate'],
-  $_POST['sex']
+  $_POST['sex'],
+  $_POST['email'],
+  $_POST['positionTitle']
 ]);
 
 // Step 4: Output

@@ -30,40 +30,57 @@
 <body>
 
 
-<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">Oconee County Fire Rescue</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
+  <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Oconee County Fire Rescue</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Certifications
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="add_cert.html">Add Certifications</a>
-                    <a class="dropdown-item" href="view_cert.html">View certifications</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Members
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="add_member.html">Add Members</a>
-                    <a class="dropdown-item" href="view_member.html">View Members</a>
-                </div>
-            </li>
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" onclick="Tom()" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Persons
+          </a>
+          <div class="dropdown-menu">
+              <a class="dropdown-item" href="add_person.html">Add Persons</a>
+              <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
+          </div>
+        </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Certifications
+                  </a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="add_cert.html">Add Certifications</a>
+                      <a class="dropdown-item" href="view_cert.html">View Certifications</a>
+                  </div>
+              </li>
+              <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Person Certifications
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="personcertification.html">Assign Certifications</a>
+                        <a class="dropdown-item" href="ViewCertificationsByPerson.html">View Certifications by Persons</a>
+                        <a class="dropdown-item" href="ViewPersonsByCertification.html">View Persons by Certifications</a>
+                    </div>
+                  </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Reports
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="ExpiredCertifications.html">Expired Certifications</a>
+                        <a class="dropdown-item" href="MemberNumbers.html">Station and Radio Numbers</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" onclick="Tom()" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
 <div class="card" style="border: none">
 	<div data-aos="fade-zoom-in" data-aos-duration="3000">
@@ -80,8 +97,7 @@
     </div>
 </div>
 
-<!-- BEGIN: INSERT CODE HERE -->
-<h2>Assign Certifications</h2>
+<h2><strong>Assign Certifications</strong></h2>
 <br>
 <div class="container">
     <div class="row">
@@ -120,12 +136,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-<!-- END: INSERT CODE HERE -->
 
 <footer class="bd-footer">
     <div class="container-fluid">
