@@ -89,32 +89,35 @@
     </div>
 </div>
 
-
 <!-- BEGIN: INSERT CODE HERE -->
-
-
-          <table class="table table-sm table-hover" id="certificationRecordsApp">
+        <div id=personCertificationsApp>
+          <div class="filter">
+              <label class="col-sm-2 col-form-label">Choose Certification:</label>
+                <select class="form-group row" v-model="filter.certId">
+                  <option value="">(all)</option>
+                  <option v-for="c in certifications" v-bind:value="c.certId">
+                  {{c.certId}}-{{c.certName}}
+                  </option>
+            </select>
+            </div>
+             <button @click="csvExport(csvData)">Export to CSV</button>
+          <table class="table table-sm table-hover" class=col-md-6>
             <thead>
-              <tr>
-                <th>ID</th>
-                <th>Certification Name</th>
-                <th>Certification Organization</th>
-                <th>Expiry Time</th>
+              <th>Name</th>
+              <th>Certificate Date</th>
+              </thead>
+              <tbody>
+              <tr v-for="pc in personCertifications"
+              v-if="((filter.certId==''||filter.certId == pc.certId) && getDate())">
+                <td>{{ pc.firstName }} {{ pc.lastName }}</td>
+                <td>{{ pc.certDate }}</td>
               </tr>
-            </thead>
-            <tbody>
-              <tr v-for="c in certifications" @click="handleRowClick(c)">
-                <td>{{ c.certId }}</td>
-                <td>{{ c.certName }}</td>
-                <td>{{ c.certOrg }}</td>
-                <td>{{ c.expTime }}</td>
-              </tr>
+
             </tbody>
           </table>
 
+
         </div>
-
-
 
 
 <footer class="bd-footer">
@@ -137,7 +140,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="js/certification.app.js"></script>
+<script src="js/personcertification.app.js"></script>
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
