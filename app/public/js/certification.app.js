@@ -4,7 +4,10 @@ var certificationRecordsApp = new Vue({ //1-var
     certifications: [],   //2-array of certification records
     recordCertification: {}, //3
     filter: {
-      sab: ''
+      certId: ''
+    },
+    selectedCertification: {
+      certId: ''
     }
   },
   methods: {
@@ -39,7 +42,8 @@ var certificationRecordsApp = new Vue({ //1-var
     },
     handleRowClick(certification) {      //??????
     certificationRecordsApp.certification = certification; //????
-    }
+  },
+
   }, // end methods
   created() {
     this.handleReset();

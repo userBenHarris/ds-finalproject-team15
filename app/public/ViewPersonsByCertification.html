@@ -49,21 +49,30 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Members
+                    Persons
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="add_member.html">Add Members</a>
-                    <a class="dropdown-item" href="view_member.html">View Members</a>
+                    <a class="dropdown-item" href="add_person.html">Add Persons</a>
+                    <a class="dropdown-item" href="view_person.html">View/Edit/Delete Persons</a>
                 </div>
-            </li>
+              </li>
 
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" onclick="Tom()" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Reports
+                  </a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="expired.html">Expired Certifications</a>
+                      <a class="dropdown-item" href="persons.html">View Active Members</a>
+                  </div>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search (ex: &quot;Tom&quot;)" aria-label="Search">
+              <button class="btn btn-outline-light my-2 my-sm-0" onclick="Tom()" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
 
 <div class="card" style="border: none">
 	<div data-aos="fade-zoom-in" data-aos-duration="3000">
@@ -81,16 +90,38 @@
 </div>
 
 <!-- BEGIN: INSERT CODE HERE -->
+        <div id=personCertificationsApp>
+          <div class="filter">
+              <label class="col-sm-2 col-form-label">Choose Person:</label>
+                <select class="form-group row" v-model="filter.certId">
+                  <option v-for="c in personCertifications" v-bind:value="c.certId">
+                  {{c.certId}}-{{c.certName}}
+                  </option>
+            </select>
+          </div>
+          <div v-for="c in personCertifications"
+          v-if="filter.certId == c.certId">
+            Certificate Name: {{ c.certName }}<br>
+            Certifying Organization:  {{ c.certOrg }}<br>
+            Period:  {{ c.expTime }} years<br>
+          </div>
 
 
-<br>
-<p>**Content goes here</p>
-<br>
+          <table class="table table-sm table-hover" class=col-md-6>
+            <thead>
+              <th>Name</th>
+              <th>Certificate Date</th>
+              </thead>
+              <tbody>
+              <tr v-for="pc in personCertifications"
+              v-if="filter.certId=='' || filter.certId == pc.certId">
+                <td>{{ pc.firstName }} {{ pc.lastName }}</td>
+                <td>{{ pc.certDate }}</td>
+              </tr>
 
-
-
-
-<!-- END: INSERT CODE HERE -->
+            </tbody>
+          </table>
+        </div>
 
 <footer class="bd-footer">
     <div class="container-fluid">
@@ -110,7 +141,10 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="js/person.app.js"></script>
+<script src="js/personcertification.app.js"></script>
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>

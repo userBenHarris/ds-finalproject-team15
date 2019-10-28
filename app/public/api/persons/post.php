@@ -27,4 +27,4 @@ $stmt->execute([           #4-attribute list
 
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
-header('Location: ../persons/'); #5-members (foldername), personId (id attribute)
+header('Location: ../persons/?personId='.$personId); #5-members (foldername), personId (id attribute)
